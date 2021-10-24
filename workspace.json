@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "agent-portal": "apps/agent-portal",
+    "agent-portal-e2e": "apps/agent-portal-e2e"
+  }
+}
