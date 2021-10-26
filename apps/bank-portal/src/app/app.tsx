@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from './logo.svg';
 import star from './star.svg';
 
 import { Route, Link } from 'react-router-dom';
+import { Table } from '@halan-pay/ui';
 
 const StyledApp = styled.div`
   font-family: sans-serif;
@@ -139,6 +140,7 @@ export function App() {
     <StyledApp>
       <header className="flex">
         <Logo width="75" height="75" />
+        <Table />
         <h1>Welcome to bank-portal!</h1>
       </header>
       <main>
