@@ -1,0 +1,72 @@
+{
+  "root": "apps/operations-portal",
+  "sourceRoot": "apps/operations-portal/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/operations-portal",
+        "index": "apps/operations-portal/src/index.html",
+        "baseHref": "/",
+        "main": "apps/operations-portal/src/main.tsx",
+        "polyfills": "apps/operations-portal/src/polyfills.ts",
+        "tsConfig": "apps/operations-portal/tsconfig.app.json",
+        "assets": [
+          "apps/operations-portal/src/favicon.ico",
+          "apps/operations-portal/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/operations-portal/src/environments/environment.ts",
+              "with": "apps/operations-portal/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "operations-portal:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "operations-portal:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/operations-portal/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/operations-portal"],
+      "options": {
+        "jestConfig": "apps/operations-portal/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

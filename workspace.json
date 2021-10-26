@@ -3,6 +3,7 @@
   "projects": {
     "agent-portal": "apps/agent-portal",
     "bank-portal": "apps/bank-portal",
+    "operations-portal": "apps/operations-portal",
     "ui": "libs/ui"
   }
 }

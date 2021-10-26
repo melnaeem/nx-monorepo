@@ -5,6 +5,7 @@ export interface TableProps {}
 
 const StyledTable = styled.div`
   color: pink;
+  background-color: #eee;
 `;
 
 export function Table(props: TableProps) {
